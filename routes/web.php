@@ -17,6 +17,11 @@ Route::get('/', function () {
     return "Pantalla principal";
 });
 
+Route::get('/home/{nombre}/{apellidos?}', function($nombre, $apellidos = null)
+{
+    return view('home', array('nombre' => $nombre),array('apellidos' => $apellidos) );
+});
+
 Route::get('login', function () {
     return "Login usuario";
 });
